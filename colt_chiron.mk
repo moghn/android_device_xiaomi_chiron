@@ -22,13 +22,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/chiron/device.mk)
 
 # Inherit some common nitrogen stuff.
-$(call inherit-product, vendor/nitrogen/products/common.mk)
+$(call inherit-product, vendor/colt/config/common_full_phone.mk)
+TARGET_BOOT_ANIMATION_RES := 1080x2160
 
-PRODUCT_NAME := nitrogen_chiron
+PRODUCT_NAME := colt_chiron
 PRODUCT_DEVICE := chiron
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi MIX 2
 PRODUCT_MANUFACTURER := Xiaomi
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.colt.maintainer=moghn
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
